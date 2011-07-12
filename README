@@ -1,0 +1,78 @@
+NAME
+    Dist::Zilla::Plugin::EmailNotify - send an email on dist release
+
+VERSION
+    version 0.001
+
+DESCRIPTION
+    This plugin allows to send an email when releasing.
+
+FIELDS
+  from
+    Who is sending the email?
+
+        [EmailNotify]
+        from = xsawyerx@cpan.org
+
+  recipient
+    Multiple single recipients. These will compose the 'to' field.
+
+        [EmailNotify]
+        recipient = jack@myemail.com
+        recipient = jill@myemail.com
+
+  to
+    Direct recipients string. This should be comma separated.
+
+        [EmailNotify]
+        to = jack@myemail.com, jill@myemail.com
+
+  cc
+    Any CC you may want. This should be comma separated.
+
+        [EmailNotify]
+        cc = myboss@myemail.com, jacksboss@myemail.com
+
+  bcc
+    Any BCC you may want. This should be comma separated.
+
+        [EmailNotify]
+        bcc = topgun@myemail.com
+
+ATTRIBUTES
+  to
+    Single 'to' field string.
+
+  recipient
+    ArrayRef of strings which will later compose the 'to' field string.
+
+  from
+    Single 'from' field string.
+
+  cc
+    Single 'cc' field string.
+
+  bcc
+    Single 'bcc' field string.
+
+METHODS/SUBROUTINES
+  release
+    Method to actually do the 'release' process. Takes all the arguments,
+    defines a body message text and sends the email using Email::Stuff.
+
+  _build_to
+    Builder to take all the recipient attribute values and create a single
+    string.
+
+  mvp_multivalue_args
+    Internal, MVP related. Creates a multivalue argument.
+
+AUTHOR
+      Sawyer X <xsawyerx@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by Sawyer X.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
