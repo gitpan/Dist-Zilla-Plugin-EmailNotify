@@ -25,4 +25,4 @@ requires:
   namespace::autoclean: 0
 resources:
   repository: http://github.com/xsawyerx/dist-zilla-plugin-emailnotify
-version: 0.001
+version: 0.002

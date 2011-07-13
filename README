@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Plugin::EmailNotify - send an email on dist release
 
 VERSION
-    version 0.001
+    version 0.002
 
 DESCRIPTION
     This plugin allows to send an email when releasing.
@@ -40,20 +40,24 @@ FIELDS
         bcc = topgun@myemail.com
 
 ATTRIBUTES
-  to
-    Single 'to' field string.
+  to(Str)
+    The 'to' email field.
 
-  recipient
-    ArrayRef of strings which will later compose the 'to' field string.
+  recipient(ArrayRef[Str])
+    This array reference of strings will be used to compose the 'to' email
+    field.
 
-  from
-    Single 'from' field string.
+    It is used in case you want to comfortably write down the recipients
+    instead of one long string. This is not provided for other fields.
 
-  cc
-    Single 'cc' field string.
+  from(Str)
+    The 'from' email field.
 
-  bcc
-    Single 'bcc' field string.
+  cc(Str)
+    The 'cc' email field.
+
+  bcc(Str)
+    The 'bcc' email field.
 
 METHODS/SUBROUTINES
   release
@@ -65,7 +69,7 @@ METHODS/SUBROUTINES
     string.
 
   mvp_multivalue_args
-    Internal, MVP related. Creates a multivalue argument.
+    Internal, Config::MVP related. Creates a multivalue argument.
 
 AUTHOR
       Sawyer X <xsawyerx@cpan.org>

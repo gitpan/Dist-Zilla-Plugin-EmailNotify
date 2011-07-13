@@ -22,7 +22,7 @@ my %module_build_args = (
     'Sawyer X <xsawyerx@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-Plugin-EmailNotify',
-  'dist_version' => '0.001',
+  'dist_version' => '0.002',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::Plugin::EmailNotify',
   'recommends' => {},
